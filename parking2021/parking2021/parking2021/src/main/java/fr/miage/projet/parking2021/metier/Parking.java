@@ -4,25 +4,26 @@ import javax.persistence.*;
 @Entity
 @Table(name = "parking")
 public class Parking {
-   @Id
-   @GeneratedValue
-   @Column(name = "numParking")
+    @Id
+    @GeneratedValue
+    @Column(name = "numparking")
     private int numParking;
 
-   @Column(name = "nomParking")
+    @Column(name = "nomparking")
     private String nomParking = "";
 
-   @Column(name = "taille")
-    private  int taille;
+    @Column(name = "taille")
+    private int taille;
 
     @Column(name = "prix")
     private int prix;
 
     @Column(name = "description")
-    private String description ="";
+    private String description = "";
 
-    @Column(name = "numCommune")
+    @Column(name = "numcommune")
     private int numCommune;
+
 
     public Parking(){
 
