@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9f306938-96bf-4716-9cd4-b14081f78884" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/Parking2021Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/Parking2021Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +44,15 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -84,6 +85,7 @@
       <workItem from="1624037775961" duration="1456000" />
       <workItem from="1624295115795" duration="1539000" />
       <workItem from="1624353207322" duration="9312000" />
+      <workItem from="1624370475471" duration="1191000" />
     </task>
     <servers />
   </component>
