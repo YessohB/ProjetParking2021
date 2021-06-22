@@ -19,5 +19,16 @@ public class ParkingService {
         return parkingRepository.findAll();
     }
 
+    public Parking getParking(Integer id) {
+        return parkingRepository.findById(id).get();
+    }
+
+    public void saveParking(Parking parking) {
+        parkingRepository.save(parking);
+    }
+
+    public void deleteParking(Integer id) {
+        parkingRepository.deleteById(id);
+    }
 
 }
