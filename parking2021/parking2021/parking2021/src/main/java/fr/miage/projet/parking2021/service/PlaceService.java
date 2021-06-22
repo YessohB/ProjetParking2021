@@ -19,15 +19,15 @@ public class PlaceService {
         return placeRepository.findAll();
     }
 
-    public Place getPlace(Integer id) {
-        return placeRepository.findById(id).get();
+    public Place getPlace(Integer numplace) {
+        return placeRepository.findById(numplace).get();
     }
 
     public void savePlace(Place place) {
         placeRepository.save(place);
     }
 
-    public void deletePlace(Integer id) {
-        placeRepository.deleteById(id);
+    public void deletePlace(Integer numplace) {
+        placeRepository.deleteById(numplace);
     }
 }

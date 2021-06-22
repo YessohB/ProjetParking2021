@@ -23,9 +23,9 @@ public class CommuneController {
     }
 
     @GetMapping("/{numcommune")
-    public ResponseEntity<Commune> get(@PathVariable Integer id) {
+    public ResponseEntity<Commune> get(@PathVariable Integer numcommune) {
         try {
-            Commune commune = communeService.getCommune(id);
+            Commune commune = communeService.getCommune(numcommune);
             return new ResponseEntity<Commune>(commune, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<Commune>(HttpStatus.NOT_FOUND);
@@ -38,14 +38,19 @@ public class CommuneController {
     }
 
     @PutMapping("/{numcommune}")
-    public ResponseEntity<?> update(@RequestBody Commune commune, @PathVariable Integer id) {
+    public ResponseEntity<?> update(@RequestBody Commune commune, @PathVariable Integer numcommune) {
         try {
-            Commune existCommune = communeService.getCommune(id);
-            commune.setNumCommune(id);
+            Commune existCommune = communeService.getCommune(numcommune);
+            commune.setNumCommune(numcommune);
             communeService.saveCommune(commune);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @DeleteMapping("/{numcommune}")
+    public void delete(@PathVariable Integer numcommune) {
+        communeService.deleteCommune(numcommune);
     }
 }

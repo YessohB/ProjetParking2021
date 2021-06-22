@@ -3,7 +3,6 @@ package fr.miage.projet.parking2021.controller;
 import fr.miage.projet.parking2021.metier.Parking;
 import fr.miage.projet.parking2021.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +23,9 @@ public class ParkingController {
     }
 
     @GetMapping("/{numparking}")
-    public ResponseEntity<Parking> get(@PathVariable Integer id) {
+    public ResponseEntity<Parking> get(@PathVariable Integer numparking) {
         try {
-            Parking parking = parkingService.getParking(id);
+            Parking parking = parkingService.getParking(numparking);
             return new ResponseEntity<Parking>(parking, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<Parking>(HttpStatus.NOT_FOUND);
@@ -38,11 +37,11 @@ public class ParkingController {
         parkingService.saveParking(parking);
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity<?> update(@RequestBody Parking parking, @PathVariable Integer id) {
+    @PutMapping("/{numparking}")
+    public ResponseEntity<?> update(@RequestBody Parking parking, @PathVariable Integer numparking) {
         try {
-            Parking existParking = parkingService.getParking(id);
-            parking.setNumParking(id);
+            Parking existParking = parkingService.getParking(numparking);
+            parking.setNumParking(numparking);
             parkingService.saveParking(parking);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e) {
@@ -50,8 +49,8 @@ public class ParkingController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id) {
-        parkingService.deleteParking(id);
+    @DeleteMapping("/{numparking}")
+    public void delete(@PathVariable Integer numparking) {
+        parkingService.deleteParking(numparking);
     }
 }

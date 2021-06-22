@@ -23,9 +23,9 @@ public class PlaceController {
     }
 
     @GetMapping("/{numplace}")
-    public ResponseEntity<Place> get(@PathVariable Integer id) {
+    public ResponseEntity<Place> get(@PathVariable Integer numplace) {
         try {
-            Place place = placeService.getPlace(id);
+            Place place = placeService.getPlace(numplace);
             return new ResponseEntity<Place>(place, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<Place>(HttpStatus.NOT_FOUND);
@@ -38,10 +38,10 @@ public class PlaceController {
     }
 
     @PutMapping("/{numplace")
-    public ResponseEntity<?> update(@RequestBody Place place, @PathVariable Integer id) {
+    public ResponseEntity<?> update(@RequestBody Place place, @PathVariable Integer numplace) {
         try {
-            Place existPlace = placeService.getPlace(id);
-            place.setNumPlace(id);
+            Place existPlace = placeService.getPlace(numplace);
+            place.setNumPlace(numplace);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -49,7 +49,7 @@ public class PlaceController {
     }
 
     @DeleteMapping("/numplace")
-    public void delete(@PathVariable Integer id) {
-        placeService.deletePlace(id);
+    public void delete(@PathVariable Integer numplace) {
+        placeService.deletePlace(numplace);
     }
 }

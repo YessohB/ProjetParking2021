@@ -19,15 +19,15 @@ public class CommuneService {
         return communeRepository.findAll();
     }
 
-    public Commune getCommune(Integer id) {
-        return communeRepository.findById(id).get();
+    public Commune getCommune(Integer numcommune) {
+        return communeRepository.findById(numcommune).get();
     }
 
     public void saveCommune(Commune commune) {
         communeRepository.save(commune);
     }
 
-    public void deleteCommune(Integer id) {
-        communeRepository.deleteById(id);
+    public void deleteCommune(Integer numcommune) {
+        communeRepository.deleteById(numcommune);
     }
 }
