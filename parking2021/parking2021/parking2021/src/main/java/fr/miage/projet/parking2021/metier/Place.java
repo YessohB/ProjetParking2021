@@ -1,9 +1,23 @@
 package fr.miage.projet.parking2021.metier;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "place")
 public class Place {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "numplace")
     private int numPlace;
+
+    @Column(name = "typeplace")
     private String typePlace ="";
+
+    @Column(name = "libelle")
     private String libelle ="";
+
+    @Column(name = "occupation")
     private int occupation;
 
     public Place(){
