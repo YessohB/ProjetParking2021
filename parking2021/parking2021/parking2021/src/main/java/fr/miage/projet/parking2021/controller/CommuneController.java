@@ -22,7 +22,7 @@ public class CommuneController {
         return communeService.listAllCommune();
     }
 
-    @GetMapping("/{numcommune")
+    @GetMapping("/{numcommune}")
     public ResponseEntity<Commune> get(@PathVariable Integer numcommune) {
         try {
             Commune commune = communeService.getCommune(numcommune);

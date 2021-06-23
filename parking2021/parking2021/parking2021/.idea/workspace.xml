@@ -7,11 +7,6 @@
     <list default="true" id="9f306938-96bf-4716-9cd4-b14081f78884" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/controller/CommuneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/controller/CommuneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/controller/ParkingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/controller/ParkingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/controller/PlaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/controller/PlaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/service/CommuneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/service/CommuneService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/service/ParkingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/service/ParkingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/service/PlaceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/miage/projet/parking2021/service/PlaceService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,19 +45,6 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Parking2021Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="parking2021" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="fr.miage.projet.parking2021.Parking2021Application" />
@@ -91,7 +73,8 @@
       <workItem from="1624037775961" duration="1456000" />
       <workItem from="1624295115795" duration="1539000" />
       <workItem from="1624353207322" duration="9312000" />
-      <workItem from="1624370475471" duration="1787000" />
+      <workItem from="1624370475471" duration="1859000" />
+      <workItem from="1624438577252" duration="1324000" />
     </task>
     <servers />
   </component>
