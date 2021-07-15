@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON with jQuery</title>
+</head>
+<body>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    /* Affichage du message It Worked! dans la console */
+  /*
+   $.getJSON('http://localhost:8080/parkings', function(data) {
+        console.log('It worked!');
+    });
+  */
+
+    /* Affichage d'un Array avec les données json dans la console */
+    /*
+  $.ajax({
+      url: 'http://localhost:8080/parkings',
+      dataType: 'json',
+      type: 'get',
+      cache: false,
+      success: function (data){
+          console.log(data);
+      }
+  })
+     */
+
+    /* Affiche l'objet avec ses différents paramètres */
+    /*
+    $.ajax({
+        url: 'http://localhost:8080/parkings',
+        dataType: 'json',
+        type: 'get',
+        cache: false,
+        success: function (data) {
+            $(data.parkings).each(function (index, value){
+                console.log(value);
+            })
+        }
+    });
+    */
+
+</script>
+
+</html>
