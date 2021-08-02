@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Parking")
 public class ParkingController {
 
     @Autowired
@@ -19,6 +18,7 @@ public class ParkingController {
     private Parking parking;
 
     @GetMapping("/parkings")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Parking> ListParking(){
         return parkingRepository.findAll();
     }
@@ -28,7 +28,8 @@ public class ParkingController {
 
     //Méthode qui va répondre à cette URI -> permet d'aller chercher un produit par son id
     //Parkings/{id}
-    @GetMapping(value ="/parkings/{id}") //cela signifie que cette méthode est appelé uniquement si on reçoit une requête de type GET et on indique l'uri
+    @GetMapping(value ="/parking/{id}") //cela signifie que cette méthode est appelé uniquement si on reçoit une requête de type GET et on indique l'uri
+    @CrossOrigin(origins = "http://localhost:4200")
     public Parking afficherUnParking(@PathVariable Integer numParking, String nomParking, Integer taille, Integer prix, String description, Integer numCommune){
 
         Parking parking = new Parking(numParking, nomParking,taille,prix,description,numCommune );
@@ -38,7 +39,8 @@ public class ParkingController {
         //Normalement ici dans le corp de la méthode on va chercher dans la base de données
     }
 
-    @PostMapping(value ="/Parkings")
+    @PostMapping(value ="/parking")
+
     public void ajouterParking(@RequestBody Parking parking){
 
         parkingRepository.save(parking);

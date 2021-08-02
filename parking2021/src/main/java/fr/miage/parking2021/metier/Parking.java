@@ -7,7 +7,6 @@ import java.util.HashMap;
 @Table(name = "parking")
 public class Parking {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "numparking")
     private Integer numParking ;
 
