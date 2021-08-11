@@ -34,6 +34,4 @@ public abstract class ParkingRepImp  implements  ParkingRepository {
     }
 
 
-
-
 }

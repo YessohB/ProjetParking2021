@@ -9,7 +9,6 @@ public class Commune {
 
 
     @Id
-    @GeneratedValue
     @Column(name = "numcommune")
     private Integer numCommune;
 

@@ -8,7 +8,6 @@ import java.util.Objects;
 public class Place {
 
     @Id
-    @GeneratedValue
     @Column(name = "numplace")
     private Integer numPlace;
 

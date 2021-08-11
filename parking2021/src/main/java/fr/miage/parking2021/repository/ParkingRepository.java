@@ -15,4 +15,7 @@ public interface ParkingRepository extends JpaRepository<Parking, Integer> {
     public Parking findById(int numparking); //methode permettant de trouver un parking par rapport à son id
 
     public Parking save(Parking parking); //methode classique de sauvegarde permettant d'ajouter ou de mettre à jour un parking
+
+    @Override
+    void deleteById(Integer integer);
 }
