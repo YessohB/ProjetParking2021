@@ -8,7 +8,6 @@ import java.util.Objects;
 public class Place {
 
     @Id
-    @GeneratedValue
     @Column(name = "numplace")
     private Integer numPlace;
 
@@ -21,15 +20,19 @@ public class Place {
     @Column(name = "occupation")
     private Integer occupation;
 
+    @Column(name ="numparking")
+    private  Integer numParking;
+
     public Place(){
 
     }
 
-    public Place(Integer numPlace, String typePlace, String libelle, Integer occupation) {
+    public Place(Integer numPlace, String typePlace, String libelle, Integer occupation, Integer numParking) {
         this.numPlace = numPlace;
         this.typePlace = typePlace;
         this.libelle = libelle;
         this.occupation = occupation;
+        this.numParking = numParking;
     }
 
     public int getNumPlace() {
@@ -64,35 +67,40 @@ public class Place {
         this.occupation = occupation;
     }
 
+    public void setOccupation(Integer occupation) { this.occupation = occupation; }
+
+    public Integer getNumParking() { return numParking; }
+
+    public void setNumParking(Integer numParking) { this.numParking = numParking; }
+
+    public void add(Place place) {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Place)) return false;
         Place place = (Place) o;
-        return occupation == place.occupation &&
-                Objects.equals(numPlace, place.numPlace) &&
-                Objects.equals(typePlace, place.typePlace) &&
-                Objects.equals(libelle, place.libelle);
+        return Objects.equals(getNumPlace(), place.getNumPlace()) &&
+                Objects.equals(getTypePlace(), place.getTypePlace()) &&
+                Objects.equals(getLibelle(), place.getLibelle()) &&
+                Objects.equals(getOccupation(), place.getOccupation()) &&
+                Objects.equals(getNumParking(), place.getNumParking());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numPlace, typePlace, libelle, occupation);
-        
+        return Objects.hash(getNumPlace(), getTypePlace(), getLibelle(), getOccupation(), getNumParking());
     }
-
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Place{");
-        sb.append("numPlace=").append(numPlace);
-        sb.append(", typePlace='").append(typePlace).append('\'');
-        sb.append(", libelle='").append(libelle).append('\'');
-        sb.append(", occupation=").append(occupation);
-        sb.append('}');
-        return sb.toString();
-    }
-
-    public void add(Place place) {
+        return "Place{" +
+                "numPlace=" + numPlace +
+                ", typePlace='" + typePlace + '\'' +
+                ", libelle='" + libelle + '\'' +
+                ", occupation=" + occupation +
+                ", numParking=" + numParking +
+                '}';
     }
 }

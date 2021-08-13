@@ -17,5 +17,6 @@ public interface PlaceRepository extends JpaRepository<Place, Integer> {
 
     public Place save(Place place); //methode classique de sauvegarde permettant d'ajouter ou de mettre à jour une place
 
-
+    @Override
+    void deleteById(Integer integer);
 }

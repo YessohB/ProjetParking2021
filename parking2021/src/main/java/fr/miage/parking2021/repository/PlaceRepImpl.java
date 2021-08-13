@@ -7,6 +7,7 @@ import java.util.List;
 
 public abstract class PlaceRepImpl implements  PlaceRepository {
 
+    PlaceRepository placeRepository;
 
     List<Place> place;
     @Override
@@ -31,5 +32,6 @@ public abstract class PlaceRepImpl implements  PlaceRepository {
         place.add(place);
         return place;
     }
+
 
 }

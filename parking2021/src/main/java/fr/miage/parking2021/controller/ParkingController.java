@@ -47,6 +47,14 @@ public class ParkingController {
 
     }
 
+    @DeleteMapping("/parking/{id}")
+    ResponseEntity<?> deleteParking(@PathVariable Integer id) {
+
+        parkingRepository.deleteById(id);
+
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 
