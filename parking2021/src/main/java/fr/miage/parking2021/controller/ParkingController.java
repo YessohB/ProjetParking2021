@@ -2,7 +2,6 @@ package fr.miage.parking2021.controller;
 
 import fr.miage.parking2021.metier.Parking;
 import fr.miage.parking2021.repository.ParkingRepository;
-import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
@@ -41,9 +40,10 @@ public class ParkingController {
 
     @PostMapping(value ="/parking")
 
-    public void ajouterParking(@RequestBody Parking parking){
+    public String ajouterParking(@RequestBody Parking parking){
 
         parkingRepository.save(parking);
+        return "redirect:ParkingView.html";
 
     }
 
@@ -55,6 +55,8 @@ public class ParkingController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/parking/{id}")
+    public void updateParking(@RequestBody Parking parking){parkingRepository.updateParking(parking);}
 
 
 

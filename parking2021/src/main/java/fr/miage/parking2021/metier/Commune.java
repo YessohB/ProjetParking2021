@@ -1,5 +1,6 @@
 package fr.miage.parking2021.metier;
 
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -9,16 +10,20 @@ public class Commune {
 
 
     @Id
-    @Column(name = "numcommune")
+    @Column(name = "numcommune",insertable=true, updatable=true, nullable=false )
     private Integer numCommune;
 
-    @Column(name = "nomcommune")
+    @Column(name = "nomcommune",insertable=true, updatable=true, nullable=false)
     private String nomCommune ="";
 
-    @Column(name = "codepostal")
+    @Column(name = "codepostal",insertable=true, updatable=true, nullable=false)
     private String codePostal;
 
-    public Commune(){ }
+
+
+    public Commune(){
+        super();
+    }
 
     public Commune(Integer numCommune, String nomCommune, String codePostal) {
         this.numCommune = numCommune;
@@ -50,32 +55,42 @@ public class Commune {
         this.codePostal = codePostal;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Commune commune = (Commune) o;
-        return numCommune == commune.numCommune &&
-                Objects.equals(nomCommune, commune.nomCommune) &&
-                Objects.equals(codePostal, commune.codePostal);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(numCommune, nomCommune, codePostal);
-    }
+
+    public void delete(Commune commune) {}
+
+    public void update(Commune commune){}
+
+    public void save(Commune commune){}
+
+
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Commune{");
-        sb.append("numCommune=").append(numCommune);
-        sb.append(", nomCommune='").append(nomCommune).append('\'');
-        sb.append(", codePostal='").append(codePostal).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "Commune{" +
+                "numCommune=" + numCommune +
+                ", nomCommune='" + nomCommune + '\'' +
+                ", codePostal='" + codePostal + '\'' +
+                '}';
     }
 
     public void add(Commune commune) {
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Commune)) return false;
+        Commune commune = (Commune) o;
+        return Objects.equals(getNumCommune(), commune.getNumCommune()) &&
+                Objects.equals(getNomCommune(), commune.getNomCommune()) &&
+                Objects.equals(getCodePostal(), commune.getCodePostal());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNumCommune(), getNomCommune(), getCodePostal());
+    }
+
 }
 

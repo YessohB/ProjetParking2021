@@ -92,6 +92,12 @@ public class Parking {
     public void add(Parking parking) {
     }
 
+    public void save(Parking parking){}
+
+    public void delete(Integer integer) {}
+
+    public void update(Parking parking) {}
+
 
     @Override
     public int hashCode() {
@@ -113,17 +119,14 @@ public class Parking {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Parking{");
-        sb.append("numParking=").append(numParking);
-        sb.append(", nomParking='").append(nomParking).append('\'');
-        sb.append(", taille=").append(taille);
-        sb.append(", prix=").append(prix);
-        sb.append(", description='").append(description).append('\'');
-        sb.append(", numCommune=").append(numCommune);
-        sb.append('}');
-        return sb.toString();
+        return "Parking{" +
+                "numParking=" + numParking +
+                ", nomParking='" + nomParking + '\'' +
+                ", taille=" + taille +
+                ", prix=" + prix +
+                ", description='" + description + '\'' +
+                ", numCommune=" + numCommune +
+                '}';
     }
-
-
 }
 

@@ -17,23 +17,22 @@ public abstract class CommuneRepImpl implements CommuneRepository {
         return commune;
     }
 
-
+/*
     @Override
-    public Commune findById(int numcommune) {
+    public Commune findById(Integer numCommune) {
         for (Commune commune : commune) {
-            if(commune.getNumCommune() == numcommune){
+            if(commune.getNumCommune() == numCommune){
                 return commune;
             }
         }
         return null;
-    }
+    }*/
 
     @Override
     public Commune save(Commune commune) {
         commune.add(commune);
         return commune;
     }
-
 
 
 }

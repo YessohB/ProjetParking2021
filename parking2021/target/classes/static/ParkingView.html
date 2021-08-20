@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylepage2.css" />
+    <title>Parkings</title>
+</head>
+<body>
+<div th:switch="${parkings}">
+    <h2 th:case="null">Liste des parkings : </h2>
+    <div th:case="*">
+        <table>
+            <thead>
+            <tr>
+                <th>Numéro:</th>
+                <th>Nom:</th>
+                <th>Taille:</th>
+                <th>Prix:</th>
+                <th>Description:</th>
+                <th>Numero commune:</th>
+                <th>Edite</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <tr th:each="parking : ${Parkings}">
+                <td th:text="${parking.numParking}" />
+                <td th:text="${parking.nomParking}" />
+                <td th:text="${parking.taille}" />
+                <td th:text="${parking.prix}" />
+                <td th:text="${parking.description}" />
+                <td th:text="${parking.numCommune}" />
+                <td> <a th:href="@{edit/{id}(id=$parking.numParking})}"></a></td>
+                <td> <a th:href="@{delete/{id}(id=$parking.numParking})}"></a></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+</body>
+</html>

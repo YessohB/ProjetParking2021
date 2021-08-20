@@ -20,7 +20,7 @@ public abstract class PlaceRepImpl implements  PlaceRepository {
     @Override
     public Place findById(int numplace) {
         for (Place place : place) {
-            if(place.getNumPlace() ==numplace){
+            if(place.getNumPlace() ==numplace) {
                 return place;
             }
         }

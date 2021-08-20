@@ -76,6 +76,21 @@ public class Place {
     public void add(Place place) {
     }
 
+    public void save(Place place) {
+
+    }
+
+    public void delete(Integer integer) {
+
+    }
+
+    public void update(Place place) {
+
+    }
+
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

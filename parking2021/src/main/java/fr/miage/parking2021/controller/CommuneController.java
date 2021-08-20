@@ -2,9 +2,9 @@ package fr.miage.parking2021.controller;
 
 
 import fr.miage.parking2021.metier.Commune;
-import fr.miage.parking2021.metier.Parking;
 import fr.miage.parking2021.repository.CommuneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +35,9 @@ public class CommuneController {
 
     @PostMapping(value = "/commune")
     public  void ajouterCommune(@RequestBody Commune commune){
+
         communeRepository.save(commune);
+
     }
 
     @DeleteMapping("/commune/{id}")
@@ -46,4 +48,23 @@ public class CommuneController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/commune/{id}")
+    public void updateCommune(@RequestBody Commune commune){
+        communeRepository.updateCommune(commune);
+
+    }
+
+/*
+    @PutMapping("/commune/{id}")
+    public ResponseEntity<Commune> updateCommune(@PathVariable(value = "numCommune") Integer numCommune,
+                                                    @RequestBody Commune communeDetail) throws ResourceNotFoundException {
+        Commune commune = communeRepository.findById(numCommune);
+
+
+        commune.setNumCommune(communeDetail.getNumCommune());
+        commune.setNomCommune(communeDetail.getNomCommune());
+        commune.setCodePostal(communeDetail.getCodePostal());
+        final Commune updateCommune = communeRepository.save(commune);
+        return ResponseEntity.ok(updateCommune);
+    }*/
 }

@@ -1,7 +1,6 @@
 package fr.miage.parking2021.controller;
 
 
-import fr.miage.parking2021.metier.Commune;
 import fr.miage.parking2021.metier.Place;
 import fr.miage.parking2021.repository.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +32,10 @@ public class PlaceController  {
     }
 
     @PostMapping(value = "/place")
-    public  void ajouterPlace(@RequestBody Place place){
+    public String ajouterPlace(@RequestBody Place place){
+
         placeRepository.save(place);
+        return "redirect:PlaceView.html";
     }
 
     @DeleteMapping("/place/{id}")
@@ -44,5 +45,8 @@ public class PlaceController  {
 
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping(value = "/place/{id}")
+    public void updatePlace(@RequestBody Place place){placeRepository.updatePlace(place);}
 
 }
