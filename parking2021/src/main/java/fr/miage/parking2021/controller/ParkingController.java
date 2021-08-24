@@ -15,15 +15,12 @@ public class ParkingController {
     @Autowired
     private ParkingRepository parkingRepository;
     private Parking parking;
-
+    //Methode pour avoir la liste des parkings
     @GetMapping("/parkings")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<Parking> ListParking(){
         return parkingRepository.findAll();
     }
-
-
-
 
     //Méthode qui va répondre à cette URI -> permet d'aller chercher un produit par son id
     //Parkings/{id}
@@ -35,29 +32,27 @@ public class ParkingController {
 
         return parking;
 
-        //Normalement ici dans le corp de la méthode on va chercher dans la base de données
+
     }
-
+    //Méthode pour sauvegarder un parking
     @PostMapping(value ="/parking")
-
     public String ajouterParking(@RequestBody Parking parking){
 
         parkingRepository.save(parking);
-        return "redirect:ParkingView.html";
-
-    }
-
+        return "redirect:ParkingView.html"; }
+    //Méthode pour supprimer un parking
     @DeleteMapping("/parking/{id}")
     ResponseEntity<?> deleteParking(@PathVariable Integer id) {
-
         parkingRepository.deleteById(id);
-
-        return ResponseEntity.noContent().build();
-    }
-
+        return ResponseEntity.noContent().build(); }
+    //Méthode pour mettre a jour un parking
     @PutMapping("/parking/{id}")
     public void updateParking(@RequestBody Parking parking){parkingRepository.updateParking(parking);}
 
-
+    @GetMapping("/parkings/commune")
+    @CrossOrigin(origins = "http://localhost:4200")
+            public List<Parking> listParkingByIdCommune(@RequestParam Integer numCommune){
+        return parkingRepository.findByIdCommune(numCommune);
+    }
 
 }

@@ -7,22 +7,22 @@ import java.util.HashMap;
 @Table(name = "parking")
 public class Parking {
     @Id
-    @Column(name = "numparking")
+    @Column(name = "numparking",insertable=true, updatable=true, nullable=false)
     private Integer numParking ;
 
-    @Column(name = "nomparking")
+    @Column(name = "nomparking",insertable=true, updatable=true, nullable=false)
     private String nomParking = "";
 
-    @Column(name = "taille")
+    @Column(name = "taille",insertable=true, updatable=true, nullable=false)
     private Integer taille;
 
-    @Column(name = "prix")
+    @Column(name = "prix",insertable=true, updatable=true, nullable=false)
     private Integer prix;
 
-    @Column(name = "description")
+    @Column(name = "description",insertable=true, updatable=true, nullable=false)
     private String description = "";
 
-    @Column(name = "numcommune")
+    @Column(name = "numcommune",insertable=true, updatable=true, nullable=false)
     private Integer numCommune;
 
 

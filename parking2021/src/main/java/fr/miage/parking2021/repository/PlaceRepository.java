@@ -25,4 +25,9 @@ public interface PlaceRepository extends JpaRepository<Place, Integer> {
     @Modifying
     @Query("UPDATE Place l SET l.numPlace = ?1, l.typePlace= ?2, l.libelle =?3, l.occupation =?4, l.numParking = ?5 ")
     void updatePlace(Place place);
+
+    @Query("SELECT p FROM Place p WHERE p.numParking= ?1")
+
+    public List<Place> findByIdParking(Integer numParking);
+
 }
