@@ -8,19 +8,19 @@ import java.util.Objects;
 public class Place {
 
     @Id
-    @Column(name = "numplace")
+    @Column(name = "numplace",insertable=true, updatable=true, nullable=false)
     private Integer numPlace;
 
-    @Column(name = "typeplace")
+    @Column(name = "typeplace",insertable=true, updatable=true, nullable=false)
     private String typePlace ="";
 
-    @Column(name = "libelle")
+    @Column(name = "libelle",insertable=true, updatable=true, nullable=false)
     private String libelle ="";
 
-    @Column(name = "occupation")
+    @Column(name = "occupation",insertable=true, updatable=true, nullable=false)
     private Integer occupation;
 
-    @Column(name ="numparking")
+    @Column(name ="numparking",insertable=true, updatable=true, nullable=false)
     private  Integer numParking;
 
     public Place(){
@@ -73,23 +73,9 @@ public class Place {
 
     public void setNumParking(Integer numParking) { this.numParking = numParking; }
 
-    public void add(Place place) {
-    }
+    public void add(Place place) { }
 
-    public void save(Place place) {
-
-    }
-
-    public void delete(Integer integer) {
-
-    }
-
-    public void update(Place place) {
-
-    }
-
-
-
+    public void save(Place place) { }
 
     @Override
     public boolean equals(Object o) {

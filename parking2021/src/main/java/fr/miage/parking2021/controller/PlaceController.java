@@ -47,6 +47,16 @@ public class PlaceController  {
     }
 
     @PutMapping(value = "/place/{id}")
-    public void updatePlace(@RequestBody Place place){placeRepository.updatePlace(place);}
+    public String updatePlace(@RequestBody Place place){
+        placeRepository.updatePlace(place);
+        return "redirect:PlaceView.html";
+
+    }
+
+    @GetMapping("/places/parking")
+    @CrossOrigin(origins = "http://localhost:4200")
+            public List<Place> listPlaceByIdParking(@RequestParam Integer numParking){
+        return placeRepository.findByIdParking(numParking);
+    }
 
 }

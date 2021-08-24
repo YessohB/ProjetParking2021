@@ -64,7 +64,6 @@ public class Commune {
     public void save(Commune commune){}
 
 
-
     @Override
     public String toString() {
         return "Commune{" +

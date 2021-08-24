@@ -49,19 +49,5 @@ public class Parking2021Application {
 
 }
 
-/*
-@Configuration
-@EnableWebMvc
-class WebAppConfig extends WebMvcConfigurerAdapter {
 
-
-
-    @GetMapping("/")
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/index.html");
-    }
-
-}
-*/
 

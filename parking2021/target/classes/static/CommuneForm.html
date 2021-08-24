@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<html lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="stylepage2.css" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylepage2.css">
     <title>Modification commune</title>
 </head>
 
@@ -12,21 +11,18 @@
 
 <h1 class="titrepage">Modification d'une commune</h1>
 
-<form id="PosSubmitcommune" name="SaisieForm" action="SubmitCommune"
-      th:action="@{/update/{id}(id=${user.id})}"
-      th:object="${user}"
-      method="post">
+<form id="PosSubmitcommune" name="SaisieForm" action="SubmitCommune" th:action="@{/update/{id}(id=${user.id})}" th:object="${user}" method="post">
 
     <p class="Nom_areaT">Numéro de la commune :</p>
-    <textarea class="AreaTextSubmit" name="numCommune" rows=1 cols=40></textarea>
+    <textarea class="AreaTextSubmit" name="numCommune" rows="1" cols="40"></textarea>
 
 
     <p class="Nom_areaT">Nom de la commune :</p>
-    <textarea class="AreaTextSubmit" name="nomCommune" rows=1 cols=40></textarea>
+    <textarea class="AreaTextSubmit" name="nomCommune" rows="1" cols="40"></textarea>
 
 
     <p class="Nom_areaT">Code postal :</p>
-    <textarea class="AreaTextSubmit" name="codePostal" rows=1 cols=40></textarea>
+    <textarea class="AreaTextSubmit" name="codePostal" rows="1" cols="40"></textarea>
 
 
 
@@ -37,4 +33,4 @@
 
 </body>
 
-</html>
+</html></html>
