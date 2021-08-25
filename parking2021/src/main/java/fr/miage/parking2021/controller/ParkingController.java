@@ -39,7 +39,7 @@ public class ParkingController {
     public String ajouterParking(@RequestBody Parking parking){
 
         parkingRepository.save(parking);
-        return "redirect:ParkingView.html"; }
+        return "redirect:index.html"; }
     //Méthode pour supprimer un parking
     @DeleteMapping("/parking/{id}")
     ResponseEntity<?> deleteParking(@PathVariable Integer id) {

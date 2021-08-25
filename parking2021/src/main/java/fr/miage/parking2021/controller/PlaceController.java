@@ -35,7 +35,7 @@ public class PlaceController  {
     public String ajouterPlace(@RequestBody Place place){
 
         placeRepository.save(place);
-        return "redirect:PlaceView.html";
+        return "redirect:index.html";
     }
 
     @DeleteMapping("/place/{id}")
@@ -49,7 +49,7 @@ public class PlaceController  {
     @PutMapping(value = "/place/{id}")
     public String updatePlace(@RequestBody Place place){
         placeRepository.updatePlace(place);
-        return "redirect:PlaceView.html";
+        return "redirect:index.html";
 
     }
 
@@ -57,6 +57,12 @@ public class PlaceController  {
     @CrossOrigin(origins = "http://localhost:4200")
             public List<Place> listPlaceByIdParking(@RequestParam Integer numParking){
         return placeRepository.findByIdParking(numParking);
+    }
+
+    @GetMapping("/places/occupation")
+    @CrossOrigin(origins = "http://localhost:4200")
+        public List<Place> listPlaceByIdOccupation(@RequestParam Integer occupation){
+        return placeRepository.findByOccupation(occupation);
     }
 
 }

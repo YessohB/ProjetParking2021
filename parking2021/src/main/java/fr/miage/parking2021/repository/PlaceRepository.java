@@ -27,7 +27,9 @@ public interface PlaceRepository extends JpaRepository<Place, Integer> {
     void updatePlace(Place place);
 
     @Query("SELECT p FROM Place p WHERE p.numParking= ?1")
-
     public List<Place> findByIdParking(Integer numParking);
+
+    @Query("SELECT p FROM Place p WHERE p.occupation= ?1")
+    public List<Place> findByOccupation(Integer numOccupation);
 
 }
