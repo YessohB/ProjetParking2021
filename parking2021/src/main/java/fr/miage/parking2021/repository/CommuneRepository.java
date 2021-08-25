@@ -25,7 +25,7 @@ public interface CommuneRepository extends JpaRepository<Commune, Integer> {
     public  Commune save(Commune commune) ;//methode classique de sauvegarde permettant d'ajouter ou de mettre à jour un parking
 
     @Override
-    void deleteById(Integer integer);
+    void deleteById(Integer integer); //methode de suppression d'une commune
 
 
 }

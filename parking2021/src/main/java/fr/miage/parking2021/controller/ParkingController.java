@@ -15,6 +15,7 @@ public class ParkingController {
     @Autowired
     private ParkingRepository parkingRepository;
     private Parking parking;
+
     //Methode pour avoir la liste des parkings
     @GetMapping("/parkings")
     @CrossOrigin(origins = "http://localhost:4200")
@@ -49,7 +50,7 @@ public class ParkingController {
     @PutMapping("/parking/{id}")
     public void updateParking(@RequestBody Parking parking){parkingRepository.updateParking(parking);}
 
-    @GetMapping("/parkings/commune")
+    @GetMapping("/parkings/commune")//methode pour selectionner les parkings par commnune
     @CrossOrigin(origins = "http://localhost:4200")
             public List<Parking> listParkingByIdCommune(@RequestParam Integer numCommune){
         return parkingRepository.findByIdCommune(numCommune);

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/")
+    @RequestMapping("/") //methode pour charger le ficher index.html au démarrage de l'application, l'index fait office de partie admin
     public String index() {
         return "redirect:index.html";
     }

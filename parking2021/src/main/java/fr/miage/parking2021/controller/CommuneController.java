@@ -33,14 +33,14 @@ public class CommuneController {
         return  commune;
     }
 
-    @PostMapping(value = "/commune")
+    @PostMapping(value = "/commune")//methode d'ajout de commune
     public  void ajouterCommune(@RequestBody Commune commune){
 
         communeRepository.save(commune);
 
     }
 
-    @DeleteMapping("/commune/{id}")
+    @DeleteMapping("/commune/{id}")//methode suppression d'une commune par l'id
     ResponseEntity<?> deleteCommune(@PathVariable Integer id) {
 
         communeRepository.deleteById(id);
@@ -48,23 +48,11 @@ public class CommuneController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/commune/{id}")
+    @PutMapping("/commune/{id}")//methode de mise à jour de l'entité
     public void updateCommune(@RequestBody Commune commune){
         communeRepository.updateCommune(commune);
 
     }
 
-/*
-    @PutMapping("/commune/{id}")
-    public ResponseEntity<Commune> updateCommune(@PathVariable(value = "numCommune") Integer numCommune,
-                                                    @RequestBody Commune communeDetail) throws ResourceNotFoundException {
-        Commune commune = communeRepository.findById(numCommune);
 
-
-        commune.setNumCommune(communeDetail.getNumCommune());
-        commune.setNomCommune(communeDetail.getNomCommune());
-        commune.setCodePostal(communeDetail.getCodePostal());
-        final Commune updateCommune = communeRepository.save(commune);
-        return ResponseEntity.ok(updateCommune);
-    }*/
 }
